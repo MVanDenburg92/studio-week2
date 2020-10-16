@@ -75,6 +75,8 @@
        .setLngLat([-87.6251, 41.8786])
        .setPopup(popup)
        .addTo(map);
+    
+    map.addControl(new MapboxGeocoder({accessToken: mapboxgl.accessToken,mapboxgl: mapboxgl}));
 
   </script>
   <div style="padding-left:20px">
