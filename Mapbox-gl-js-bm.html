@@ -17,22 +17,24 @@
     <!-- Adding styling info for page layout by reading in a CSS file -->
     <link rel="stylesheet" href="styles.css">
 </head>
-
+  
+  
 <body>
-  <h1>Studio Week 2 <br> Custom Style with Mapbox GL JS </h1>
-  <!-- Add multiple pages to web page-->
-  <!-- active class displays the grey box around current page-->
-  <ul>
-  	<li><a href="index.html" target="_self">Output 1</a></li>
-    <li><a href="Mapbox-gl-js-cwm.html" target="_self">Output 2</a></li>
-    <li><a href="Mapbox-gl-js-ct.html" target="_self">Output 3</a></li>
-    <li><a class="active" href="Mapbox-gl-js-bm.html" target="_self">Output 4</a></li>
-  </ul>
+	
+<div class="header">
+  <a href="index.html" class="logo">Studio Week 2: Custom Style with Mapbox GL JS</a>
+  <div class="header-right">
+    <a class="active" href="index.html" target="_self">Output 1 <span class="sr-only">(current)</span></a>
+    <a href="Mapbox-gl-js-cwm.html" target="_self">Output 2</a>
+    <a href="Mapbox-gl-js-ct.html" target="_self">Output 3</a>
+    <a href="Mapbox-gl-js-bm.html" target="_self">Output 4</a>
+  </div>
+</div>	
   <br>
 
-    <!-- Container for the map -->
-    <div id="mapId"></div>
-
+  <div id="mapId"></div>
+  
+  
     <script>
     // Set your Mapbox access token
     mapboxgl.accessToken = "pk.eyJ1IjoibXZhbmRlbmJ1cmc5MiIsImEiOiJja2U4d2R5dDAyMHhwMnpwOGl6OGs2bmZ3In0.bjkT9KX_g4RVv1voVkvRnw";
