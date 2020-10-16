@@ -3,13 +3,15 @@
 body { 
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+  border: 4px black;
 }
 
 .header {
   overflow: hidden;
-  background-color: #1e90ff;
+  background-color: #f1f1f1;
   padding: 20px 10px;
-  border: 4px dotted white;
+  border-bottom: 4px black;
 }
 
 .header a {
