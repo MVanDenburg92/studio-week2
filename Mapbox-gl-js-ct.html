@@ -40,7 +40,24 @@
 
  <div id="mapId"></div>
   
-  
+ <div id="menu">
+   <input
+          id="streets-v11"
+          type="radio"
+          name="rtoggle"
+          value="streets"
+          checked="checked"
+          />
+  <label for="streets-v11">streets</label>
+  <input id="light-v10" type="radio" name="rtoggle" value="light" />
+  <label for="light-v10">light</label>
+  <input id="dark-v10" type="radio" name="rtoggle" value="dark" />
+  <label for="dark-v10">dark</label>
+  <input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors" />
+  <label for="outdoors-v11">outdoors</label>
+  <input id="satellite-v9" type="radio" name="rtoggle" value="satellite" />
+  <label for="satellite-v9">satellite</label>
+  </div>
   
 
   <script>
@@ -78,6 +95,8 @@
        .setPopup(popup)
        .addTo(map);
     
+    
+    
     var geocoder = new MapboxGeocoder({ // Initialize the geocoder
       accessToken: mapboxgl.accessToken, // Set the access token
       mapboxgl: mapboxgl, // Set the mapbox-gl instance
@@ -86,12 +105,24 @@
 
 // Add the geocoder to the map
 map.addControl(geocoder);
+    
+var layerList = document.getElementById('menu');
+var inputs = layerList.getElementsByTagName('input');
+ 
+function switchLayer(layer) {
+var layerId = layer.target.id;
+map.setStyle('mapbox://styles/mapbox/' + layerId);
+}
+ 
+for (var i = 0; i < inputs.length; i++) {
+inputs[i].onclick = switchLayer;
+}
       
   </script>
   <div style="padding-left:20px">
   <h1>Exercise 3</h1>
   <h3>This output is a demonstration of embedding a customized  web map using the <a href= "https://docs.mapbox.com/mapbox-gl-js/api/">Mapbox GL Javascript library</a> within a Github website. For this demo, I was asked to test placing a pop-up enable marker down on the map.</h3>
-  <h3>For the marker, I placed it in the center of downtown Chicago for people to open and take a gander around.</h3>
+  <h3>For the marker, I placed it in the center of downtown Chicago for people to open and take a gander around. In addition, I added in another geocoder for people to enter addresses and some additional basemaps for people to switch around with.</h3>
 </div>
 </body>
 
