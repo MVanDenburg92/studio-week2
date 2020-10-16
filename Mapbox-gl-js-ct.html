@@ -34,7 +34,10 @@
 </div>	
   <br>
 
- <div id="mapId"></div>  
+ <div id="mapId"></div>
+  
+  
+  
 
   <script>
     // Set your Mapbox access token
@@ -52,7 +55,6 @@
          center: [-87.6298, 41.875], // center
          zoom: 13 //  zoom
      });
-    
 
 
     /* Create a variable called "popup" to store a new Popup instance (ref: https://docs.mapbox.com/mapbox-gl-js/api/#popup).
@@ -71,8 +73,6 @@
        .setLngLat([-87.6251, 41.8786])
        .setPopup(popup)
        .addTo(map);
-    
-    map.addControl(new MapboxGeocoder({accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl});
 
   </script>
 </body>
