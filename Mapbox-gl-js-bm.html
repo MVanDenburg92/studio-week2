@@ -51,6 +51,32 @@
     style: "mapbox://styles/mvandenburg92/ckgbhk0wv16fe19pjkj2fn3ga",
     container: "mapId"
     });
+	    
+map.on('load', function() {
+
+  // Add source for admin-1 Boundaries
+  map.addSource('admin-1', {
+    type: 'vector',
+    url: 'mapbox://mapbox.boundaries-loc4-v3'
+  });
+
+  // Add a layer with boundary polygons
+  map.addLayer(
+    {
+      id: 'admin-1-fill',
+      type: 'fill',
+      source: 'admin-1',
+      'source-layer': 'boundaries_locality_4',
+      paint: {
+        'fill-color': '#CCCCCC'
+      }
+    },
+    // This final argument indicates that we want to add the Boundaries layer
+    // before the `waterway-label` layer that is in the map from the Mapbox
+    // Light style. This ensures the admin polygons will be rendered on top of
+    // the
+  );
+});
 
     </script>
 
