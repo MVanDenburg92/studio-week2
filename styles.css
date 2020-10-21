@@ -1,5 +1,9 @@
 * {box-sizing: border-box;}
 
+#menu{
+ padding-left: 20px;
+  
+}
 #mapId{
   height: 800px;
   width: 95%;
